@@ -1,38 +1,38 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js');
 
 workbox.precaching.precacheAndRoute([
-    {url:"/manifest.json", revision: '1'},
-    {url:"/index.html", revision: '1'},
-    {url:"/teams.html", revision: '1'},
-    {url:"/nav.html", revision: '1'},
-    {url:"/navigator-sw.js", revision: '1'},
+    {url:"manifest.json", revision: '1'},
+    {url:"index.html", revision: '1'},
+    {url:"teams.html", revision: '1'},
+    {url:"nav.html", revision: '1'},
+    {url:"navigator-sw.js", revision: '1'},
     ],{
         ignoreURLParametersMatching:[/.*/]
     });
 
 workbox.routing.registerRoute(
-    new RegExp('/pages/'),
+    new RegExp('pages/'),
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'pages'
     })
 );
 
 workbox.routing.registerRoute(
-    new RegExp('/css/'),
+    new RegExp('css/'),
     new workbox.strategies.CacheFirst({
         cacheName: 'assets'
     })
 );
 
 workbox.routing.registerRoute(
-    new RegExp('/js/'),
+    new RegExp('js/'),
     new workbox.strategies.CacheFirst({
         cacheName: 'assets'
     })
 );
 
 workbox.routing.registerRoute(
-    new RegExp('/img/'),
+    new RegExp('img/'),
     new workbox.strategies.CacheFirst({
         cacheName: 'assets'
     })
