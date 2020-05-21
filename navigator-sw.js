@@ -8,7 +8,7 @@ if (!('serviceWorker' in navigator)) {
 //service worker
 function registerServiceWorker(){
     return navigator.serviceWorker
-        .register("/sw.js")
+        .register("./sw.js")
         .then(function () {
             console.log("Pendaftaran ServiceWorker berhasil");
         })
