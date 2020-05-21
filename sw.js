@@ -1,6 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js');
 
 workbox.precaching.precacheAndRoute([
+    {url:"/", revision: '1'},
     {url:"manifest.json", revision: '1'},
     {url:"index.html", revision: '1'},
     {url:"teams.html", revision: '1'},
